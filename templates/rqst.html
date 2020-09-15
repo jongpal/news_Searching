@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Search results</title>
+    <meta charset="utf-8">
+    <style>
+      body {
+        background-color:white;   
+      }
+     .box {
+        margin: 30px;
+        padding: 101px;
+        padding-right:0px;
+        width: 603px;
+        height: 94px;
+        background-color: aliceblue;
+        border: 3px ridge black;
+        opacity: 0.4;
+        box-shadow:5px 7px pink;        
+      }
+      .border {
+        border-bottom: 1px solid black;
+      }
+     
+      input {
+    width: 450px;
+    padding: 0px 8px;
+    font-style:italic;
+    font-weight:bold;
+  }
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 29px;
+    line-height: 2;
+}
+.whole{
+  display:grid;
+  grid-gap:10px;
+  grid-template-columns:1fr 6.7fr;
+}
+/*.whole.section{
+  grid:display;
+  grid-gap : 10px;
+  grid-template-rows: repeat(4, 1fr);
+  width: 80%;
+}*/
+/*.section*/ #company{
+  font-size : 13px;
+  margin : 5px;
+}
+#summary{
+  font-size : 10px;
+  font-family: sans-serif;
+  margin : 5px;
+}
+#title{
+  font-size:0.6em;
+  margin : 5px;
+}
+.forimage{
+  margin-left:20px;
+  margin-right:0;
+  margin-bottom:0%;
+  padding:5px;
+}
+
+h1{
+  
+  margin : 10px;
+  padding: 10px;
+  border: 2px groove black;
+}
+@media(max-width:800px){
+  .forimage{
+    display:none;
+  }
+  .whole{
+    display:grid;
+    grid-gap:5px;
+    grid-template-rows:2fr 1fr 1fr 1fr;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <h1><u>{{len}}</u> results for <em>'{{searching}}'</em><h1>
+  <div class="whole">
+
+    
+    <div class="forimage">
+      {% for new in news %}
+      <div class="forimg"><a href="{{new['links']}}"><img src="{{new['img']}}" width="80" height="80"></a></div>
+      {% endfor %}
+    </div>
+
+    <div class="section">
+    {% if news == "No"%}
+    <div>No results <a href="https://myscrapper.jongpal.repl.co">Go back</a></div>
+    {% else %}
+    {% for new in news %}
+    <div id="title"><a href="{{new['links']}}">{{new['title']}}</a></div>
+    <div id="company">{{new['company']}}</div>
+    <div id="summary">{{new['summary']}}</div>
+    <div class="border"></div>
+    {% endfor %}
+    {%endif%}
+    </div>
+    
+  
+   
+    </div>
+   
+  </div>
+  </body>
+</html>

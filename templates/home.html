@@ -1,0 +1,98 @@
+1<!doctype html>
+<html>
+  <head>
+    <title>All news in naver</title>
+    <meta charset="utf-8">
+    <style>
+      body {
+        background:url("https://images.pexels.com/photos/1928151/pexels-photo-1928151.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");  
+        background-color:transparent
+      }
+     .box{
+        animation: moveBox 1s linear;
+        //margin: 30px;
+        padding: 101px;
+        padding-right:103px;
+        width: 603px;
+        height: 184px;
+        background-color: aliceblue;
+        border: 3px ridge black;
+        opacity: 0.4;
+        box-shadow:5px 7px pink;        
+        transition: 2.0s;
+        
+      }
+      .box:hover{
+        margin: 30px;
+        padding: 101px;
+        padding-right:103px;
+        width: 603px;
+        height: 184px;
+        background-color: alicblue;
+        border: 3px ridge black;
+        opacity: 1.0;
+        box-shadow:5px 7px pink;    
+      }
+     
+    @keyframes moveBox {
+      from {margin: 30px;}
+      to {margin: 100px;}
+    }
+     
+      input {
+    width: 450px;
+    padding: 0px 8px;
+    font-style:italic;
+    font-weight:bold;
+    font-family:sans-serif;
+    transition: color 0.35s ease, background 0.5s ease-in-out;
+    
+  }
+  input:hover{
+    
+    color:black;
+    background:gainsboro;
+  }
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 29px;
+    line-height: 2;
+}
+input[id="startdate"]{
+  width:300px;
+}
+input[id="enddate"]{
+  width:300px;
+}
+input[id="startdate"]::-webkit-input-placeholder{
+  font-size: 20px;
+  line-height:1.6;
+  
+}
+input[id="enddate"]::-webkit-input-placeholder{
+  font-size: 20px;
+  line-height:1.6;
+  
+}
+.btsize{
+  cursor: pointer;
+  width:117px;
+  height:58px;
+  font-size:1.5em;
+  font-family:sans-serif;
+}
+    </style>
+  </head>
+  <body>
+      <div class="box">   
+        <form action="/request" method="GET">     
+          <label for="naversearch"><input type="text" placeholder="Search news in the NAVER" required="required" name='search' id='naversearch'>
+          <label for="startdate"><input type="text" placeholder="FROM(ex:2019.09.10)" required="required" name="ds" id="startdate">
+          <label for="enddate"><input type="text" placeholder="TO" required="required" name="de" id="enddate">
+          <br>
+          <button type='submit' class="btsize">search</button>
+
+        </form>
+      </div>    
+</html>

@@ -1,0 +1,33 @@
+body {
+        background:url("https://images.pexels.com/photos/1928151/pexels-photo-1928151.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");  
+        background-color:transparent
+      }
+     .box {
+        margin: 30px;
+        padding: 101px;
+        padding-right:103px;
+        width: 603px;
+        height: 94px;
+        background-color: aliceblue;
+        border: 3px ridge black;
+        opacity: 0.4;
+        box-shadow:5px 7px pink;        
+      }
+     
+      input {
+    width: 450px;
+    padding: 0px 8px;
+    font-style:italic;
+    font-weight:bold;
+  }
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 29px;
+    line-height: 2;
+}
+.btsize{
+  width:117px;
+  height:58px;
+  font-size:1.5em;
+}
